@@ -1,0 +1,29 @@
+/* banner */
+
+@import '../../common/_core.less';
+
+.m-banner {
+  padding-top: percentage(3996/750);
+  background: url('@{static}/_images/m-page-bg@3x.jpg') no-repeat center top;
+  background-size: contain;
+  overflow: hidden;
+
+  .tt {
+    height: 0;
+    overflow: hidden;
+  }
+
+  .u-btn {
+    &-share {
+      position: fixed;
+      top: 24/@s;
+      right: 28/@s;
+      width: 60/@s;
+      height: 50/@s;
+      line-height: 9999/@s;
+      overflow: hidden;
+      background: url('@{static}/_images/u-btn-share@3x.png') no-repeat center center;
+      background-size: contain;
+    }
+  }
+}

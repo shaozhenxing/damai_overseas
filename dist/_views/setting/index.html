@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+<!--开启对web app的支持-->
+ <meta name="apple-mobile-web-app-capable" content="yes" />
+
+<!--主要是正对苹果手机将数字自动识别为号码-->
+<meta name="format-detection" content="telephone=no" />
+
+<!-- 忽略识别邮箱，主要是针对安卓手机会自动将符合邮箱格式的字符串识别为邮箱地址-->
+<meta content="email=no" name="format-detection" />
+<meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL" />
+
+<!-- 添加智能 App 广告条 Smart App Banner：告诉浏览器这个网站对应的app，并在页面上显示下载banner:https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html -->
+
+<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+<meta name="HandheldFriendly" content="true">
+
+<!-- 微软的老式浏览器 -->
+<meta name="MobileOptimized" content="320">
+
+<!-- uc强制竖屏 -->
+<meta name="screen-orientation" content="portrait">
+
+<!-- QQ强制竖屏 -->
+<meta name="x5-orientation" content="portrait">
+
+<!-- UC强制全屏 -->
+<meta name="full-screen" content="yes">
+
+<!-- QQ强制全屏 -->
+<meta name="x5-fullscreen" content="true">
+
+<!-- UC应用模式 -->
+<meta name="browsermode" content="application">
+
+<!-- QQ应用模式 -->
+<meta name="x5-page-mode" content="app">
+
+<!-- windows phone 点击无高光 -->
+<meta name="msapplication-tap-highlight" content="no">
+
+<title>Damai.cn</title>
+
+<style>
+.ms-controller {
+  visibility: hidden;
+}
+</style>
+
+<link href="../../_css\common.1.0.0.css?b715e4f3a8abd75b9b1e" rel="stylesheet"><link href="../../_css\setting\index.1.0.0.css?b715e4f3a8abd75b9b1e" rel="stylesheet"></head>
+
+<body ms-controller="app" class="ms-controller">
+<div class="g-doc">
+    <div class="g-hd">
+      <!-- 头部栏 start -->
+      <div class="m-hdbar">
+        <a href="javascript:;" class="u-btn u-btn-c1">{{ @data.i18n.cancel }}</a>
+        <h2 class="tt">{{ @data.i18n.language }}</h2>
+        <a href="javascript:;" class="u-btn z-dis">{{ @data.i18n.save }}</a>
+      </div>
+      <!-- 头部栏 end -->
+    </div>
+
+    <div class="g-bd">
+      <!-- 语言列表 start -->
+      <div class="m-sellst">
+        <ul class="lst">
+          <li class="itm" ms-for="(key, el) in @data.items" :class="@data.lang === el.lang ? 'z-crt' : ''" ms-click="@onLangClick(el)">
+            <span class="txt">{{ el.txt }}</span>
+          </li>
+        </ul>
+      </div>
+      <!-- 语言列表 end -->
+    </div>
+
+    <div class="g-ft">
+      <!-- 导航栏 start -->
+      <div class="m-navbar">
+        <ul class="lst">
+          <li class="itm"><a href="javascript:;"><i class="ico ico-home"></i><span class="txt">{{ @data.i18n.home }}</span></a></li>
+          <li class="itm"><a href="javascript:;"><i class="ico ico-category"></i><span class="txt">{{ @data.i18n.category }}</span></a></li>
+          <li class="itm"><a href="../_views"><i class="ico ico-sch2"></i><span class="txt">{{ @data.i18n.search }}</span></a></li>
+          <li class="itm z-crt"><a href="../_views/setting"><i class="ico ico-me"></i><span class="txt">{{ @data.i18n.me }}</span></a></li>
+        </ul>
+      </div>
+      <!-- 导航栏 end -->
+    </div>
+</div>
+
+<script type="text/javascript" src="../../_js\common.1.0.0.js?b715e4f3a8abd75b9b1e"></script><script type="text/javascript" src="../../_js\setting\index.1.0.0.js?b715e4f3a8abd75b9b1e"></script></body>
+
+</html>

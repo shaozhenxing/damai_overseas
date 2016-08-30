@@ -1,0 +1,29 @@
+/* sellst */
+
+@import '../../common/_core.less';
+
+.m-sellst {
+  > .lst {
+    padding: 0 30/@s;
+    margin-bottom: 20/@s;
+    background-color: #fff;
+
+    > .itm {
+      .flexbox;
+
+      color: @color_gray_3;
+      padding: (100 - 28 * 1.5) / 2 / @s 0;
+      border-top: 1px solid @color_gray_11;
+      font-size: 28/@s;
+      line-height: 1.5;
+
+      &:first-child {
+        border-top: none;
+      }
+
+      &.z-crt {
+        color: @color_red_3;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "lang": "jp",
+  "version": "0.0.1",
+  "i18n": {
+    "language": "言語",
+    "save": "保存する",
+    "cancel": "取り消し",
+    "date": "日付",
+    "venue": "競技場",
+    "price": "価格",
+    "home": "トップページ",
+    "category": "分類",
+    "search": "検索",
+    "me": "私の"
+  }
+}

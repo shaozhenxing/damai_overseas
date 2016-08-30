@@ -1,0 +1,16 @@
+{
+  "lang": "en",
+  "version": "0.0.1",
+  "i18n": {
+    "language": "Language",
+    "save": "Save",
+    "cancel": "Cancel",
+    "date": "Date",
+    "venue": "Venue",
+    "price": "Price",
+    "home": "Home",
+    "category": "Category",
+    "search": "Search",
+    "me": "Me"
+  }
+}

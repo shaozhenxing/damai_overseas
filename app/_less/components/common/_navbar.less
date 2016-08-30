@@ -1,0 +1,68 @@
+/* navbar */
+
+@import '../../common/_core.less';
+
+.m-navbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: #fff;
+  height: 90/@s;
+  border-top: 1px solid @color_gray_14;
+
+  .lst {
+    .flexbox;
+
+    height: 100%;
+  }
+
+  .itm {
+    &, a {
+      .flexbox;
+
+      .box-flex;
+      .box-pack(center);
+      .box-align(center);
+      .box-orient(vertical);
+
+      width: 100%;
+      height: 100%;
+      color: @color_gray_15;
+      font-size: 16/@s;
+      font-weight: bold;
+
+      &:active, &.z-crt {
+        &, a {
+          color: @color_red_2;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .ico, .txt {
+      display: block;
+    }
+
+    .ico {
+      font-size: 32/@s;
+      height: 40/@s;
+
+      &-sch2 {
+        font-size: 40/@s;
+      }
+
+      &-me {
+        font-size: 40/@s;
+      }
+    }
+
+    .txt {
+      padding-top: 6/@s;
+    }
+  }
+}

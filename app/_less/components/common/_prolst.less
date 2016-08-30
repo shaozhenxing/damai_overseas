@@ -1,0 +1,49 @@
+/* proitm */
+
+@import '../../common/_core.less';
+
+.m-prolst {
+  > .lst {
+    > .itm {
+      .flexbox;
+
+      padding: 30/@s;
+      margin-bottom: 20/@s;
+      background-color: #fff;
+
+      > .mn {
+        .flexbox;
+
+        .box-flex;
+        .box-orient(vertical);
+
+        padding-left: 20/@s;
+      }
+
+      .poster {
+        width: 170/@s;
+        height: 230/@s;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+      }
+
+      .tt {
+        line-height: 40/@s;
+        color: @color_gray_3;
+        font-size: 26/@s;
+        padding-bottom: 32/@s;
+      }
+
+      .info {
+        color: @color_gray_13;
+        font-size: 22/@s;
+        line-height: 1.5;
+
+        .row {
+          padding-bottom: 5/@s;
+        }
+      }
+    }
+  }
+}

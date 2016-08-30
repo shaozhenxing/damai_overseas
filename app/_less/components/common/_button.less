@@ -1,0 +1,35 @@
+/* button */
+
+@import '../../common/_core.less';
+
+.u-btn {
+  text-decoration: none;
+
+  &:active {
+    .transition(.3s all ease);
+    .transform(scale(1.1));
+  }
+
+  /* 禁用 */
+  &.z-dis {
+    color: @color_gray_16;
+    cursor: default;
+  }
+  
+  /* 小号 */
+  &-sm {
+    width: 110/@s;
+    height: 36/@s;
+    line-height: 36/@s;
+    font-size: 22/@s;
+
+    &.u-btn-rds {
+      border-radius: 4/@s;
+    }
+  }
+  
+  /* 红字 */
+  &-c1 {
+    color: @color_red_3;
+  }
+}

@@ -1,0 +1,62 @@
+/* modal_form */
+
+@import '../../common/_core.less';
+
+@{ns_modal} {
+  &-form {
+    text-align: center;
+    
+    .bd {
+      .flexbox;
+
+      .box-orient(vertical);
+
+      padding: 22/@s 46/@s;
+    }
+
+    .row {
+      .flexbox;
+
+      .box-flex;
+
+      .box-pack(center);
+      
+      width: 100%;
+      padding-bottom: 15/@s;
+
+      .u-btn {
+        &-code {
+          margin: 0 0 0 12/@s;
+          width: 120/@s;
+          height: 46/@s;
+          line-height: 46/@s;
+          box-shadow: none;
+          border-radius: 5/@s;
+          font-size: 20/@s;
+        }
+      }
+    }
+
+    .txt {
+      font-size: 26/@s;
+
+      &-1 {
+        font-size: 24/@s;
+        line-height: 36/@s;
+      }
+    }
+
+    .u-btn {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .u-ipt {
+      .flexbox;
+
+      .box-flex;
+
+      width: 100%;
+    }
+  }
+}

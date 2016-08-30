@@ -1,0 +1,29 @@
+/* tips */
+
+@import '../../common/_core.less';
+
+@{ns_modal} {
+  &-tips {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, .8);
+    border-radius: 10/@s;
+    color: #fff;
+    padding: 10/@s 20/@s;
+    text-align: center;
+    font-size: 24/@s;
+    line-height: 1.5;
+
+    //.transform(translate3d(-50%, -50%, 0));
+
+    &.z-hide {
+      display: none;
+    }
+
+    &.z-show {
+      display: block;
+    }
+  }
+}

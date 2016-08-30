@@ -1,0 +1,391 @@
+.gpu() {
+  .transform(translateZ(0));
+
+  .backface;
+
+  .perspective;
+}
+
+.tap-highlight(@val: rgba(0, 0, 0, 0)) {
+  -webkit-tap-highlight-color: @val;
+  -moz-tap-highlight-color: @val;
+  -ms-tap-highlight-color: @val;
+  tap-highlight-color: @val;
+}
+
+.opacity(@value) {
+  @v: @value * 100;
+
+  opacity: @value;
+  filter: alpha(opacity=@v);
+}
+
+.scroll {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.user-select(@value: none) {
+  -webkit-user-select: @value; 
+  -moz-user-select: @value; 
+  -ms-user-select: @value; 
+  -o-user-select: @value; 
+  user-select: @value; 
+}
+
+.appearance(@value: listbox) {
+  -webkit-appearance: @value;
+  -moz-appearance: @value;
+  -ms-appearance: @value;
+  -o-appearance: @value;
+  appearance: @value;
+}
+
+/* 三角 */
+.triangle (@_, @w: 5px, @c: #ccc) {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* 上 */
+.triangle(top, @w: 5px, @c: #ccc) {
+  border-width: @w;
+  border-color: transparent transparent @c transparent;
+  border-style: dashed dashed solid dashed;
+}
+
+/* 下 */
+.triangle(bottom, @w: 5px, @c: #ccc) {
+  border-width: @w;
+  border-color: @c transparent transparent transparent;
+  border-style: solid dashed dashed dashed;
+}
+
+/* 左 */
+.triangle(left, @w: 5px, @c: #ccc) {
+  border-width: @w;
+  border-color: transparent @c transparent transparent;
+  border-style: dashed solid dashed dashed;
+}
+
+/* 右 */
+.triangle(right, @w: 5px, @c: #ccc) {
+  border-width: @w;
+  border-color: transparent transparent transparent @c;
+  border-style: dashed dashed dashed solid;
+}
+
+// 毛玻璃
+.blur(@val: 10px) {
+  -webkit-filter: blur(@val); /* Chrome, Opera */
+  -moz-filter: blur(@val);
+  -ms-filter: blur(@val);   
+   filter: blur(@val); 
+}
+
+// 多列布局
+.column-count(@value) {
+  -webkit-column-count: @value;
+  -moz-column-count: @value;
+  -ms-column-count: @value;
+  column-count: @value;
+}
+
+// 多列间距
+.column-gap(@value) {
+  -moz-column-gap: @value;
+  -webkit-column-gap: @value;
+  -ms-column-gap: @value;
+  column-gap: @value;
+}
+
+// 渐变
+.gradient(...) {
+  background-image: -webkit-gradient(@arguments);
+  background-image: -moz-gradient(@arguments);
+  background-image: -ms-gradient(@arguments);
+  background-image: gradient(@arguments);
+}
+
+// 线性渐变
+.linear-gradient(...) {
+  background-image: -webkit-linear-gradient(@arguments);
+  background-image: -moz-linear-gradient(@arguments);
+  background-image: -ms-linear-gradient(@arguments);
+  background-image: linear-gradient(@arguments);
+}
+
+.linear-gradient(@dir, @color1, @color2) {
+  background-image: -webkit-linear-gradient(@dir, @color1, @color2);
+  background-image: -moz-linear-gradient(@dir, @color1, @color2);
+  background-image: -ms-linear-gradient(@dir, @color1, @color2);
+  background-image: linear-gradient(@dir, @color1, @color2);
+}
+
+// 边框图案
+.border-image(@value) {
+  -webkit-border-image: @value;
+  -moz-border-image: @value;
+  -ms-border-image: @value;
+  border-image: @value;
+}
+
+// 圆角
+.border-radius(@value) {
+  -webkit-border-radius: @value;
+  -moz-border-radius: @value;
+  -ms-border-radius: @value;
+  border-radius: @value;
+}
+
+// 背景遮罩
+.mask-image(@value) {
+  -webkit-mask-image: @value;
+  -moz-mask-image: @value;
+  -ms-mask-image: @value;
+  mask-image: @value;
+}
+
+.mask-repeat(@value: no-repeat) {
+  -webkit-mask-repeat: @value;
+  -moz-mask-repeat: @value;
+  -ms-mask-repeat: @value;
+  mask-repeat: @value;
+}
+
+.mask-position(@value: left top) {
+  -webkit-mask-position: @value;
+  -moz-mask-position: @value;
+  -ms-mask-position: @value;
+  mask-position: @value;
+}
+
+.mask-size(@value: cover) {
+  -webkit-mask-size: @value;
+  -moz-mask-size: @value;
+  -ms-mask-size: @value;
+  mask-size: @value;
+}
+
+// 提示文字
+.place-color(@value) {
+  &::-webkit-input-placeholder {
+    color: @value;
+  }
+
+  &:-ms-input-placeholder {
+    color: @value;
+  }
+}
+
+// 弹性布局
+.flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: box;
+}
+
+.box-flex(@value: 1) {
+  -webkit-box-flex: @value;
+  -moz-box-flex: @value;
+  -ms-box-flex: @value;
+  -prefix-box-flex: @value; /* old spec webkit, moz */
+  box-flex: @value;
+  flex: @value;
+}
+
+// 横向对齐方式
+.box-pack(@value: start) {
+  /* -webkit-box-pack: @value;
+  -moz-box-pack: @value;
+    -ms-flex-pack: @value;
+  box-pack: @value; */
+
+  /* 老版本语法 */
+  -webkit-box-pack: @value; 
+  -moz-box-pack: @value;
+
+  /* 混合版本语法 */
+  -ms-flex-pack: @value; 
+  
+  /* 新版本语法 */
+  -webkit-justify-content: @value;
+  justify-content: @value;
+}
+
+// 纵向对齐方式
+.box-align(@value: start) {
+  /* -webkit-box-align: @value;
+  -moz-box-align: @value;
+  -ms-flex-align: @value;
+  box-align: @value; */
+  
+  /* 老版本语法 */
+  -webkit-box-align: @value; 
+  -moz-box-align: @value;
+  
+  /* 混合版本语法 */
+  -ms-flex-align: @value; 
+  
+  /* 新版本语法 */
+  -webkit-align-items: @value;
+  align-items: @value;
+}
+
+// 排列方式
+.box-orient(@value: horizontal) {
+  -webkit-box-orient: @value;
+  -moz-box-orient: @value;
+  -ms-flex-align: @value;
+  box-orient: @value;
+}
+
+// 分散对齐
+.justify-content(@value: space-between) {
+  -webkit-justify-content: @value;
+  -moz-justify-content: @value;
+  -ms-justify-content: @value;
+  justify-content: @value;
+}
+
+// 分散对齐
+.justify() {
+  .flexbox;
+
+  .box-pack(justify);
+
+  .justify-content(space-between);
+}
+
+// 文字分散对齐
+.text-justify() {
+  text-align: justify;
+  text-justify: distribute-all-lines;
+  text-align-last: justify;
+}
+
+.overflow-scrolling(@value: touch) {
+  -webkit-overflow-scrolling: @value;
+}
+
+.backface(@value: hidden) {
+  -webkit-backface-visibility: hidden; /* Chrome 和 Safari */
+  -moz-backface-visibility: hidden;  /* Firefox */
+  -ms-backface-visibility: hidden; 
+  backface-visibility: hidden;
+}
+
+.perspective(@value: 1000) {
+  -webkit-perspective: @value;
+  -moz-perspective: @value;
+  -ms-perspective: @value;
+  perspective: @value;
+}
+
+// 变形
+.transform(@value) {
+  -webkit-transform: @value;
+  -moz-transform: @value;
+  -ms-transform: @value;
+  transform: @value;
+}
+
+.transform-style(@value) {
+  -webkit-transform-style: @value;
+  -moz-transform-style: @value;
+  -ms-transform-style: @value;
+  transform-style: @value;
+}
+
+.transform-origin(@value) {
+  -webkit-transform-origin: @value;
+  -moz-transform-origin: @value;
+  -ms-transform-origin: @value;
+  transform-origin: @value;
+}
+
+// 渐变
+.transition(@value) {
+  -webkit-transition: @value;
+  -moz-transition: @value;
+  -ms-transition: @value;
+  transition: @value;
+}
+
+// 动画
+.animation(@value) {
+  -webkit-animation: @value;
+  -moz-animation: @value;
+  -ms-animation: @value;
+  animation: @value;
+}
+
+.animation-name(@value) {
+	-webkit-animation-name: @value;
+  -moz-animation-name: @value;
+  -ms-animation-name: @value;
+  animation-name: @value;
+}
+
+.animation-delay(@value) {
+	-webkit-animation-delay: @value;
+  -moz-animation-delay: @value;
+  -ms-animation-delay: @value;
+  animation-delay: @value;
+}
+
+.animation-duration(@value) {
+  -webkit-animation-duration: @value;
+  -moz-animation-duration: @value;
+  -ms-animation-duration: @value;
+  animation-duration: @value;
+}
+
+.animation-count(@value: infinite) {
+  -webkit-animation-iteration-count: @value;
+  -moz-animation-iteration-count: @value;
+  -ms-animation-iteration-count: @value;
+  animation-iteration-count: @value;
+}
+
+.animation-direction(@value: alternate) {
+  -webkit-animation-direction: @value;
+  -moz-animation-direction: @value;
+  -ms-animation-direction: @value;
+  animation-direction: @value;
+}
+
+.animation-function(@value: ease) {
+  -webkit-animation-timing-function: @value;
+  -moz-animation-timing-function: @value;
+  -ms-animation-timing-function: @value;
+  animation-timing-function: @value;
+}
+
+.animation-fill-mode(@value: both) {
+  -webkit-animation-fill-mode: @value;
+  -moz-animation-fill-mode: @value;
+  -ms-animation-fill-mode: @value;
+  animation-fill-mode: @value;
+}
+
+// 动画
+.keyframes(@name) { 
+  @-webkit-keyframes @name {
+    .-frames(-webkit-);
+  }
+
+  @-moz-keyframes @name {
+    .-frames(-moz-);
+  }
+
+  @-ms-keyframes @name {
+    .-frames(-ms-);
+  }
+
+  @keyframes @name {
+    .-frames();
+  }
+}

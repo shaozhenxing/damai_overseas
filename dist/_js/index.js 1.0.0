@@ -1,0 +1,64 @@
+webpackJsonp([1],{
+
+/***/ 0:
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(26);
+
+
+/***/ },
+
+/***/ 26:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	__webpack_require__(27);
+
+	var _utils = __webpack_require__(31);
+	var _store = __webpack_require__(103);
+	var _global = __webpack_require__(102);
+
+	// console.log(utils.provide('damai.mobile.locals.zh-CN', { damai: { mobile: { c: 3 }, a: { b: 2 } } }))
+
+
+	var vm = avalon.define({
+	  $id: 'app',
+	  data: {
+	    // 国际化
+	    i18n: {},
+	    // 搜索关键字
+	    key: '',
+	    // 项目列表
+	    items: []
+	  },
+	  // 获取国际化包
+	  fetchI18n: function fetchI18n() {
+	    var _this = this;
+
+	    _store.fetchI18n().then(function (res) {
+	      _this.data.i18n = res.i18n;
+	    });
+	  },
+	  // 获取项目列表
+	  fetchItems: function fetchItems() {
+	    var _this2 = this;
+
+	    _store.fetchItemList(this.data.key).then(function (res) {
+	      _this2.data.items = res;
+	    });
+	  },
+	  onCancelClick: function onCancelClick() {
+	    this.data.key = '';
+	  },
+	  onInit: function onInit() {
+	    this.fetchI18n();
+	    this.fetchItems();
+	  }
+	});
+
+	vm.onInit();
+
+/***/ }
+
+});

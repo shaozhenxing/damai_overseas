@@ -1,0 +1,16 @@
+{
+  "lang": "zh-HK",
+  "version": "0.0.1",
+  "i18n": {
+    "language": "語言",
+    "save": "保存",
+    "cancel": "取消",
+    "date": "日期",
+    "venue": "場館",
+    "price": "價格",
+    "home": "首頁",
+    "category": "分類",
+    "search": "蒐索",
+    "me": "我的"
+  }
+}

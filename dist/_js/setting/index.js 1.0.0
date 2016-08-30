@@ -1,0 +1,153 @@
+webpackJsonp([2],{
+
+/***/ 0:
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(105);
+
+
+/***/ },
+
+/***/ 105:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	__webpack_require__(27);
+	__webpack_require__(106);
+	__webpack_require__(108);
+
+	var _utils = __webpack_require__(31);
+	var _store = __webpack_require__(103);
+
+	var vm = avalon.define({
+	  $id: 'app',
+	  data: {
+	    // 语言
+	    lang: '',
+	    // 国际化
+	    i18n: {},
+	    // 语言列表
+	    items: [{
+	      'lang': 'en',
+	      'txt': 'English'
+	    }, {
+	      'lang': 'zh-CN',
+	      'txt': '中文（简体）'
+	    }, {
+	      'lang': 'zh-HK',
+	      'txt': '中文（繁体）'
+	    }, {
+	      'lang': 'jp',
+	      'txt': '日本語'
+	    }]
+	  },
+	  // 获取国际化包
+	  fetchI18n: function fetchI18n() {
+	    var _this = this;
+
+	    _store.fetchI18n().then(function (res) {
+	      _this.data.i18n = res.i18n;
+
+	      _this.data.lang = res.lang;
+	    });
+	  },
+	  onLangClick: function onLangClick(item) {
+	    _utils.cookie.set('lang', item.lang);
+
+	    this.fetchI18n();
+	  },
+	  onInit: function onInit() {
+	    this.fetchI18n();
+	  }
+	});
+
+	vm.onInit();
+
+/***/ },
+
+/***/ 106:
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(107);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(30)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./_hdbar.less", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./_hdbar.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+
+/***/ 107:
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(29)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".scroll{overflow:auto;-webkit-overflow-scrolling:touch}.m-hdbar{position:fixed;top:0;left:0;right:0;z-index:100;background-color:#fff;height:3.84rem;overflow:hidden}.m-hdbar,.m-hdbar .tt,.m-hdbar .u-btn{display:-webkit-box;display:-ms-flexbox;display:box;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.m-hdbar .tt,.m-hdbar .u-btn{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;height:100%}.m-hdbar .tt{-webkit-box-flex:1;-ms-box-flex:1;-prefix-box-flex:1;box-flex:1;flex:1;font-size:1.28rem}.m-hdbar .u-btn{padding:0 1.28rem;font-size:.85333333rem}", ""]);
+
+	// exports
+
+
+/***/ },
+
+/***/ 108:
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(109);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(30)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./_sellst.less", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./_sellst.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+
+/***/ 109:
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(29)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".scroll{overflow:auto;-webkit-overflow-scrolling:touch}.m-sellst>.lst{padding:0 1.28rem;margin-bottom:.85333333rem;background-color:#fff}.m-sellst>.lst>.itm{display:-webkit-box;display:-ms-flexbox;display:box;color:#333;padding:1.23733333rem 0;border-top:1px solid #dcdcdc;font-size:1.19466667rem;line-height:1.5}.m-sellst>.lst>.itm:first-child{border-top:none}.m-sellst>.lst>.itm.z-crt{color:#e41b45}", ""]);
+
+	// exports
+
+
+/***/ }
+
+});

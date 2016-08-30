@@ -1,0 +1,221 @@
+@{ns_modal} {
+  // 微信分享
+  &-wechat {
+    .transform(translate3d(0, 0, 0));
+    
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    background: none;
+
+    .tips {
+      position: fixed;
+      top: 22/@s;
+      right: 15/@s;
+      width: 484/@s;
+      height: 1243/@s;
+      background: url('@{static}/_images/m-layer-share-wechat@3x.png') no-repeat 0 0;
+      background-size: contain;
+
+      .txt {
+        display: none;
+        float: right;
+        width: 255/@s;
+        padding-top: 36/@s;
+        color: @color_yellow_1;
+        font-size: 24/@s;
+        text-align: center;
+      }
+    }
+  }
+
+  /* 客户端分享 */
+  &-share, &@{ns_modal}-share {
+    .transform(translate3d(0, 0, 0));
+
+    position: fixed;
+    z-index: 101;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, .95);
+
+    &.z-show.z-anim {
+      display: block;
+      
+      //.a-slideB();
+      //.animation-duration(.3s);
+    }
+
+    &.z-hide.z-anim {
+      display: none;
+
+      //.a-slideoutB();
+      //.animation-duration(.3s);
+    }
+
+    .m-menu {
+      .flexbox;
+
+      //max-width: 600/@s;
+      width: 100%;
+      margin: 44/@s auto;
+
+      .itm {
+        .flexbox;
+        .box-flex;
+        .box-pack(center);
+
+        padding: 0 20/@s;
+        //padding-bottom: 50/@s;
+        width: 100%;
+      }
+
+      .u-btn {
+        display: block;
+        overflow: hidden;
+        background: none;
+        width: auto;
+        height: auto;
+        text-decoration: none;
+        box-shadow: none;
+        border: none;
+        
+        .border-radius(0);
+
+        .transition(none);
+        .transform(none);
+
+        .ico {
+          display: block;
+          margin: 0 auto;
+          width: 106/@s;
+          height: 106/@s;
+          border-radius: 50%;
+          background: data-uri('@{static}/_images/m-sharing-btns.png') no-repeat 9999/@s 9999/@s;
+          background-size: 450/@s 150/@s;
+          background-color: #f30;
+        }
+
+        .txt {
+          display: block;
+          padding-top: 16/@s;
+          height: auto;
+          line-height: 2em;
+          font-size: 24/@s;
+          font-weight: normal;
+          color: #333;
+          text-align: center;
+        }
+
+        &:active {
+          .txt {
+            color: darken(#333, 15%)
+          }
+        }
+        
+        /* 黄色 */
+        &-c1 {
+          .ico {
+            background-color: #ffb400;
+          }
+
+          &:active {
+            .ico {
+              background-color: darken(#ffb400, 15%)
+            }
+          }
+        }
+        
+        /* 绿色 */
+        &-c2 {
+          .ico {
+            background-color: #0fc81a;
+          }
+
+          &:active {
+            .ico {
+              background-color: darken(#0fc81a, 15%)
+            }
+          }
+        }
+
+        /* 红色 */
+        &-c3 {
+          .ico {
+            background-color: #f54444;
+          }
+
+          &:active {
+            .ico {
+              background-color: darken(#f54444, 15%)
+            }
+          }
+        }
+        
+        /* 微博 */
+        &-weibo {
+          .ico {
+            background-position: 0 0;
+          }
+        }
+        
+        /* 微信 */
+        &-wechat {
+          .ico {
+            background-position: -150/@s 0;
+          }
+        }
+        
+        /* 朋友圈 */
+        &-timeline {
+          .ico {
+            background-position: -300/@s 0;
+          }
+        }
+      }
+    }
+
+    .ft {
+      border-top: 1px solid #d7d7d7;
+
+      .flexbox;
+
+      .u-btn {
+        .flexbox;
+        
+        .box-flex;
+        .box-pack(center);
+        .box-align(center);
+
+        .border-radius(0);
+
+        border: none;
+
+        color: #f73c43;
+        font-size: 30/@s;
+        background: rgba(0, 0, 0, 0);
+        box-shadow: none;
+
+        &-close {
+          position: static;
+          font-weight: normal;
+          height: 86/@s;
+          line-height: 86/@s;
+        }
+
+        &:active {
+          color: darken(#f73c43, 15%);
+          background-color: darken(#fff, 15%);
+
+          .transform(none);
+        }
+      }
+    }
+  }
+}

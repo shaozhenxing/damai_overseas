@@ -1,0 +1,54 @@
+/* modal */
+
+@import '../../common/_core.less';
+
+@{ns_modal} {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 101;
+  width: 500/@s;
+  background-color: @color_red_1;
+  border-radius: 10/@s;
+  color: #fff;
+  line-height: 1.5;
+
+  .transform(translate3d(-50%, -50%, 0));
+
+  &.z-show {
+    display: block;
+  }
+
+  &.z-hide {
+    display: none;
+  }
+
+  .bd {
+    .flexbox;
+
+    .box-pack(center);
+    .box-align(center);
+    .box-orient(vertical);
+
+    text-align: center;
+    min-height: 168/@s;
+  }
+
+  .txt {
+    .flexbox;
+  }
+
+  .u-btn {
+    &-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 32/@s;
+      height: 32/@s;
+      line-height: 999/@s;
+      overflow: hidden;
+      background: url('@{static}/_images/u-btn-close@3x.png') no-repeat center center;
+      background-size: 12/@s 12/@s;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+/* header */
+
+@import '../../common/_core.less';
+
+.m-hdbar {
+  .flexbox;
+
+  .box-align(center);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #fff;
+  height: 90/@s;
+  overflow: hidden;
+
+  .tt, .u-btn {
+    .flexbox;
+    
+    .box-pack(center);
+    .box-align(center);
+
+    height: 100%;
+  }
+
+  .tt {
+    .box-flex;
+
+    font-size: 30/@s;
+  }
+
+  .u-btn {
+    padding: 0 30/@s;
+    font-size: 20/@s;
+  }
+}

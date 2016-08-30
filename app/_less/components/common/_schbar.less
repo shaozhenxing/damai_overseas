@@ -1,0 +1,65 @@
+/* schbar */
+
+@import '../../common/_core.less';
+
+.m-schbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #fff;
+  padding: 16/@s 30/@s;
+
+  .flexbox;
+
+  .box-align(center);
+
+  .ipt {
+    .flexbox;
+
+    .box-flex;
+    .box-align(center);
+    
+    height: 56/@s;
+    border: 1px solid @color_gray_11;
+    border-radius: 56/2/@s;
+    overflow: hidden;
+
+    .ico {
+      color: @color_gray_9;
+
+      &-sch {
+        width: 60/@s;
+        line-height: 32/@s;
+        overflow: hidden;
+        font-size: 40/@s;
+        margin: 0 10/@s 0 20/@s;
+      }
+
+      &-del {
+        color: @color_gray_12;
+        font-size: 32/@s;
+        line-height: 24/@s;
+        margin: 0 16/@s;
+      }
+    }
+
+    .u-ipt {
+      .flexbox;
+
+      .box-flex;
+
+      font-size: 24/@s;
+      color: @color_gray_3;
+    }
+  }
+
+  .u-btn {
+    &-sch {
+      text-align: center;
+      color: @color_red_1;
+      margin-left: 20/@s;
+    }
+  }
+}
